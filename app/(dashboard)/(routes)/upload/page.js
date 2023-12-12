@@ -11,12 +11,12 @@ import { useRouter } from 'next/navigation'
 
 function Upload() {
   const { user } = useUser()
-  const router=useRouter()
-  const [progress,setProgress]=useState()
+  const router = useRouter()
+  const [progress, setProgress] = useState()
   const storage = getStorage(app)
   const db = getFirestore(app)
-  const [fileDocId,setFileDocId]=useState()
-  const [uploadCompleted,setUploadCompleted]=useState(false)
+  const [fileDocId, setFileDocId] = useState()
+  const [uploadCompleted, setUploadCompleted] = useState(false)
   const uploadFile = (file) => {
     // const metadata = {
     //   contentType: file.type
@@ -36,7 +36,7 @@ function Upload() {
     },)
   }
 
-  const saveInfo = async(file,fileUrl)=>{
+  const saveInfo = async(file, fileUrl)=>{
     const docId = generateRandomString().toString();;
     setFileDocId(docId)
     await setDoc(doc(db, "uploadedFile", docId), {
@@ -55,19 +55,19 @@ function Upload() {
   useEffect(()=>{
     console.log("Trigger")
     
-    progress==100&& setTimeout(()=>{
+    progress == 100 && setTimeout(()=>{
       setUploadCompleted(true);
-    },2000)
-  },[progress==100]);
+    }, 2000)
+  },[progress == 100]);
 
   useEffect(()=>{
-    uploadCompleted&&
+    uploadCompleted &&
     setTimeout(()=>{
       setUploadCompleted(false);
       console.log("FileDocId",fileDocId)
-      // router.push('/file-preview/'+fileDocId);
-    },2000)
-  },[uploadCompleted==true])
+      router.push('/file-preview/'+fileDocId);
+    }, 2000)
+  },[uploadCompleted == true])
 
   return (
     <div className='p-5 px-8 md:px-28 text-center'>
