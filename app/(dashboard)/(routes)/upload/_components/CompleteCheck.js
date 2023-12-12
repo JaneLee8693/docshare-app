@@ -3,12 +3,7 @@ import React from 'react'
 
 function CompleteCheck() {
     return (
-        <div className='flex 
-    flex-col 
-    text-center
-    items-center
-    justify-center mt-20
- '>
+        <div className='flex flex-col text-center items-center justify-center mt-20'>
             <Image src='/verified.gif'
                 width={100} height={100} alt='verified'
             />

@@ -23,10 +23,8 @@ export const EmailTemplate = ({
     <Preview>File Shared With You</Preview>
     <Body style={main}>
       <Container>
-      
         <Section style={content}>
-          <Img width={620} src={`https://yt3.googleusercontent.com/K4ZufSCvqT-Mx7ylpkoroVUR47Ka7CotpcQcRa2VqX5X5gLB1I7I33lfREK8SBfAZIzBV77sim4=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj`} />
-
+          <Img width={620} src='/media.png'/>
           <Row style={{  paddingBottom: '0' }}>
             <Column>
               <Heading
@@ -36,7 +34,6 @@ export const EmailTemplate = ({
                   textAlign: 'center',
                 }}
               >
-                
                 Hi {responce?.emailToSend?.split("@")[0]},
               </Heading>
               <Heading
@@ -74,7 +71,7 @@ export const EmailTemplate = ({
               </Text>
 
               <Text style={paragraph}>
-                Now You can also share file with Tubegurji FileSharo App
+                Now You can also share file with DocShare App
               </Text>
               <Text style={{  marginTop: -5 }}>
                 Click Below Button to Access your file
@@ -95,7 +92,7 @@ export const EmailTemplate = ({
         
 
         <Section style={containerImageFooter}>
-          <Img width={620} src={`https://yt3.googleusercontent.com/K4ZufSCvqT-Mx7ylpkoroVUR47Ka7CotpcQcRa2VqX5X5gLB1I7I33lfREK8SBfAZIzBV77sim4=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj`} />
+          <Img width={620} src='/media.png' />
         </Section>
 
         <Text
@@ -105,8 +102,8 @@ export const EmailTemplate = ({
             color: 'rgb(0,0,0, 0.7)',
           }}
         >
-          © 2024 | Tubegurji @2024 Copyrights
-          U.S.A. | www.Tubeguruji.com
+          © 2024 | DocShare @2024 Copyrights
+          U.S.A. | janelee860903@gmail.com
         </Text>
       </Container>
     </Body>

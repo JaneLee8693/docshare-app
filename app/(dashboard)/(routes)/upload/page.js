@@ -58,16 +58,16 @@ function Upload() {
     progress == 100 && setTimeout(()=>{
       setUploadCompleted(true);
     }, 2000)
-  },[progress == 100]);
+  }, [progress == 100]);
 
   useEffect(()=>{
     uploadCompleted &&
     setTimeout(()=>{
       setUploadCompleted(false);
-      console.log("FileDocId",fileDocId)
-      router.push('/file-preview/'+fileDocId);
+      console.log("FileDocId", fileDocId)
+      router.push('/file-preview/' + fileDocId);
     }, 2000)
-  },[uploadCompleted == true])
+  }, [uploadCompleted == true])
 
   return (
     <div className='p-5 px-8 md:px-28 text-center'>

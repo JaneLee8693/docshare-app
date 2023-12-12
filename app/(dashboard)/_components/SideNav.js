@@ -2,8 +2,9 @@
 import React, { useState } from 'react'
 import { File, Shield, Upload } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
-function SideNav() {
+function SideNav({closeSideBar}) {
     const menuList = [
         {
             id: 1,
@@ -30,22 +31,26 @@ function SideNav() {
   return (
     <div className='shadow-sm border-r h-full'>
         <div className='p-5 border-b'>
-            <Image src='/logo.svg' width={50} height={30}/>
+            <Link href={process.env.NEXT_PUBLIC_DOMAIN}>
+                <Image src='/logo.svg' width={50} height={30} alt='logo'/>
+            </Link>
         </div>
         <div className='flex flex-col float-left w-full'>
             {menuList.map((item, index) => (
-                <button
-                  className={`flex gap-2 p-4 px-6 hover:bg-gray-100 w-full text-gray-500'
-                    ${activeIndex == index? 'bg-blue-50 text-primary': null}`
-                }
-                  onClick={() => setActiveIndex(index)}
-                >
-                    <item.icon/>
-                    <h2>{item.name}</h2>
-                </button>
+                <Link href={item.path} key={index}>
+                    <button
+                    //   key={index}
+                      className={`flex gap-2 p-4 px-6 hover:bg-gray-100 w-full text-gray-500'
+                        ${activeIndex == index? 'bg-blue-50 text-primary': null}`
+                      }
+                      onClick={()=>{setActiveIndex(index); closeSideBar()}}
+                    >
+                        <item.icon/>
+                        <h2>{item.name}</h2>
+                    </button>
+                </Link>
             ))}
         </div>
-
     </div>
   )
 }

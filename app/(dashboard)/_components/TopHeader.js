@@ -20,19 +20,19 @@ import Image from 'next/image';
 import { AlignJustify } from 'lucide-react';
 import { UserButton } from '@clerk/nextjs';
 
-function TopHeader({ toggleSidebar }) {
+function TopHeader({ setToggleBar }) {
   return (
     <div className='flex p-5 border-b items-center justify-between md:justify-end'>
       <AlignJustify
         className='md:hidden cursor-pointer'
-        onClick={toggleSidebar}
+        onClick={()=>setToggleBar(true)}
       />
       <Image
         src='/logo.svg'
         width={40}
         height={30}
         className='md:hidden cursor-pointer'
-        onClick={toggleSidebar}
+        // onClick={toggleSidebar}
       />
       <UserButton />
     </div>

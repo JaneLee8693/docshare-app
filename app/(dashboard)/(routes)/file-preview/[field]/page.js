@@ -5,6 +5,7 @@ import { app } from '../../../../../firebase.config'
 import { ArrowLeftSquare } from 'lucide-react'
 import Link from 'next/link'
 import FileInfo from './_components/FileInfo'
+// import FileShareForm from './_components/FileShareForm'
 
 function FilePreview({params}) {
 
