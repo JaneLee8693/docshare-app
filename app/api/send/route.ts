@@ -4,14 +4,14 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req) {
-     const responce=await req.json();
+export async function POST() {
+    //  const responce=await resend.emails.send();
   try {
     const data = await resend.emails.send({
-      from: 'janelee860903@docshare.com',
-      to: [responce.emailToSend],
-      subject: responce?.userName+" share file with You",
-      react: EmailTemplate({ responce }),
+      from: 'janelee@resend.dev',
+      to: ['accounts@docshare.com'],
+      subject: " share file with You",
+      react: EmailTemplate({ firstName: 'John' }),
     });
 
     return NextResponse.json(data);

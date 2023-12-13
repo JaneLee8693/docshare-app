@@ -2,10 +2,10 @@
 import { UserButton, useUser } from '@clerk/nextjs'
 import React, { useEffect, useState } from 'react'
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
-import app from './../../../../firebaseConfig'
-import TotalFileCard from './_components/TotalFileCard'
-import FileList from './_components/FileList'
-import Link from 'next/link';
+import app from './../../../../firebase.config'
+// import TotalFileCard from './_components/TotalFileCard'
+// import FileList from './_components/FileList'
+// import Link from 'next/link';
 
 function Files() {
   const db = getFirestore(app);
@@ -35,13 +35,13 @@ function Files() {
       {fileList.length==0?
       <>
        <h2 className='mb-6'> You dont have any File</h2>
-        <Link href={process.env.NEXT_PUBLIC_DOMAIN} 
+        {/* <Link href={process.env.NEXT_PUBLIC_DOMAIN} 
         className='p-2 text-white bg-primary rounded-md mt-7'>
           Upload Now
-        </Link>
+        </Link> */}
       </>:<>
-      <TotalFileCard totalFile={fileList?.length}/>
-      <FileList fileList={fileList} />
+      {/* <TotalFileCard totalFile={fileList?.length}/>
+      <FileList fileList={fileList} /> */}
       </>
        
       }

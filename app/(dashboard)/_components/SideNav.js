@@ -31,9 +31,9 @@ function SideNav({closeSideBar}) {
   return (
     <div className='shadow-sm border-r h-full'>
         <div className='p-5 border-b'>
-            <Link href={process.env.NEXT_PUBLIC_DOMAIN}>
+            {/* <Link href={process.env.NEXT_PUBLIC_DOMAIN}>
                 <Image src='/logo.svg' width={50} height={30} alt='logo'/>
-            </Link>
+            </Link> */}
         </div>
         <div className='flex flex-col float-left w-full'>
             {menuList.map((item, index) => (
