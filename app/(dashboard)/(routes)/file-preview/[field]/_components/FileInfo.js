@@ -3,12 +3,19 @@ import React, { useEffect, useState } from 'react'
 
 function FileInfo({ file }) {
 
-    const [fileType, setFileType]=useState();
+    const [fileType, setFileType] = useState();
 
     useEffect(()=>{
-        file && setFileType(file?.fileType.split('/')[0]);
-        console.log(fileType);
+      console.log(file);
+      if (file) {
+        setFileType(file?.fileType.split('/')[0]);
+      }
+      console.log(fileType);
     }, [file])
+
+    if (!file) {
+      return null;
+    }
 
   return file && (
     <div className='text-center border flex justify-center m-4 flex-col items-center p-2 rounded-lg border-blue-200'>

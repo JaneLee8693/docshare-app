@@ -15,7 +15,7 @@ function FilePreview({params}) {
     useEffect(() => {
         console.log(params?.fileId);
         params?.fileId && getFileInfo();
-    }, [])
+    }, [params?.fileId])
 
     const getFileInfo = async() => {
         const docRef = doc(db, 'uploadedFile', params?.fileId);
@@ -29,21 +29,25 @@ function FilePreview({params}) {
     }
 
     const onPasswordSave = async(password)=>{
-        const docRef=doc(db, "uploadedFile", params?.fileId);
+        const docRef = doc(db, "uploadedFile", params?.fileId);
         await updateDoc(docRef, {
             password: password
         });
-
     }
 
   return (
     <div className='py-10 px-20'>
-        <Link href='/upload' className='flex gap-3'>
-            <ArrowLeftSquare/> Go to Upload </Link>
+        <Link href='/upload' className='flex gap-3'><ArrowLeftSquare/> Go to Upload </Link>
         <div className='grid grid-cols-1 md:grid-cols-2 mt-5'>
-            <FileInfo file={file} />
-            <FileShareForm  file={file} 
-              onPasswordSave={(password)=> onPasswordSave(password)}/>
+            {file ? (
+                        <>
+                            <FileInfo file={file} />
+                            <FileShareForm file={file} onPasswordSave={(password) => onPasswordSave(password)} />
+                        </>
+                    ) : (
+                        <p>Loading...</p>
+                    )
+            }
         </div>
     </div>
   )

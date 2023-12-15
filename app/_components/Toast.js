@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 
 
-function Toast({toast,closeToast}) {
-    // const {toast,setToast}=useContext(ToastContext);
+function Toast({toast, closeToast}) {
+    // const {toast, setToast} = useContext(ToastContext);
 
-    // useEffect(()=>{
-    //     toast?.status&&setTimeout(()=>{
+    // useEffect(() => {
+    //     toast?.status && setTimeout(() => {
     //         setToast(null)
-    //     },3000)
-    // },[toast]);
+    //     }, 3000)
+    // }, [toast]);
 
     
   return toast?.status && (
@@ -38,7 +38,7 @@ function Toast({toast,closeToast}) {
             </div>
 
             <button className="text-white transition hover:text-gray-600"
-            onClick={()=>closeToast()}>
+            onClick={() => closeToast()}>
                 <span className="sr-only">Dismiss popup</span>
 
                 <svg
