@@ -16,16 +16,16 @@ function Header() {
                             </li>
 
                             <li>
-                                <a className="text-gray-500 transition hover:text-gray-500/75" href="/"> Upload </a>
+                                <a className="text-gray-500 transition hover:text-gray-500/75" href="/upload"> Upload </a>
                             </li>
 
                             <li>
-                                <a className="text-gray-500 transition hover:text-gray-500/75" href="/"> About Us </a>
+                                <a className="text-gray-500 transition hover:text-gray-500/75" href="#about"> About Us </a>
                             </li>
 
-                            <li>
+                            {/* <li>
                                 <a className="text-gray-500 transition hover:text-gray-500/75" href="/"> Contact Us </a>
-                            </li>
+                            </li> */}
 
                         </ul>
                     </nav>
@@ -34,7 +34,7 @@ function Header() {
                         <div className="sm:flex sm:gap-4">
                             <a
                                 className="block rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-700"
-                                href="/files"
+                                href="/upload"
                             >
                                 Get Started
                             </a>
